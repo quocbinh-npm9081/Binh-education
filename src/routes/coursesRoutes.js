@@ -1,0 +1,11 @@
+const express = require('express');
+const Route = express.Router();
+const CoursesController = require('../app/controllers/CoursesController');
+Route.get('/create', CoursesController.create);
+Route.post('/store', CoursesController.store);
+Route.get('/:id/edit', CoursesController.edit);
+Route.put('/:id', CoursesController.update);
+Route.delete('/:id', CoursesController.deleteOne);
+Route.get('/:slug', CoursesController.show);
+Route.get('/', CoursesController.index);
+module.exports = Route;
